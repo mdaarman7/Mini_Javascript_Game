@@ -1,11 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>
+        Go To Hell
+    </title>
 </head>
+
 <body>
-    
+    <canvas id="canvas" width="300" height="300" style="border:2px solid blue;"></canvas>
+
 </body>
+<script>
+    let canvas = document.getElementById("canvas"); //paper
+    let context = canvas.getContext("2d");   //pen
+
+    context.beginPath();
+    context.fillStyle = "black";
+    context.rect(0, 0, 185, 55);
+    context.fill();
+    context.closePath();
+
+    context.beginPath();
+    context.fillStyle = "red";
+    context.arc(40, 25, 20, 0, 2 * Math.PI);
+    context.fill();
+    
+    context.beginPath();
+    context.fillStyle = "green";
+    context.arc(90, 25, 20, 0, 2 * Math.PI);
+    context.fill();
+
+    context.beginPath();
+    context.fillStyle = "orange";
+    context.arc(140, 25, 20, 0, 2 * Math.PI);
+    context.fill();
+
+    console.log(canvas);
+</script>
+
 </html>
