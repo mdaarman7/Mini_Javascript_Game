@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+
+<body>
+    <div style="background-color: aqua; padding: 10;"> Hey Its Me Someone </div>
+    <canvas style="background-color: aquamarine;" id="canvas" width="300" height="300"></canvas>
+</body>
+
+
+
+<script>
+/*const room = document.getElementById("room");
+
+/*function callMe(){
+    console.log("Open me");
+}
+
+//room.addEventListener("click",callMe);
+room.addEventListener("click", () =>{
+    console.log("click");
+})*/
+
+const canvas = document.getElementById("canvas");
+const context = canvas.getContext("2d");
+
+context.beginPath();
+context.fillStyle= "yellow";
+context.rect(0,0,60,60);
+context.fill();
+
+canvas.addEventListener("mousemove", (event) => {
+    console.log(event.clientX, event.clientY);
+
+    context.clearRect(0,0,300,300); //clear screen
+
+    context.beginPath();
+    context.fillStyle= "blue";
+    context.arc(event.clientX, event.clientY, 10,0,360);
+    context.fill();
+})
+
+document.addEventListener("keydown",(event) => {
+    if(event.code=="ArrowUp")
+        console.log("Jump");
+})
+
+</script>
+
+</html>

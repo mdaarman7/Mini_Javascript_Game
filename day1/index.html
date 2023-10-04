@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEllo</title>
+</head>
+<body>
+    <h1 id="title" style="color: blue;">Hellow World</h1>
+</body>
+
+<script>
+    let playhealth = 95;
+    playhealth++;
+    const max_health = 100;
+    hello();
+    function hello() 
+    {
+        console.log(playhealth);
+    }
+    let title = document.getElementById("title");
+    console.log(title);
+    title.innerHTML = "Changed from JS";
+    title.style.color = "red";
+    title.style.background = "blue";
+
+    let font_size = 10;
+    setInterval(() => 
+    {
+        title.style.fontsize = font_size + "px";
+        font_size += 10;
+    }, 1000);
+
+</script>
+
+</html>

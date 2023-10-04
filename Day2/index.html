@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas
+    style="background-color:black"
+    id="canvas"
+    width="600px"
+    height="600px"
+    
+    ></canvas>
+</body>
+   <script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    
+    
+    canvas.addEventListener("mousemove",(coordinate)=>
+    {
+       
+        console.log("coordinate");  
+        ctx.clearRect(0,0,600,600);
+        ctx.beginPath();
+        ctx.fillStyle = "blue";
+        ctx.arc(coordinate.clientX-5,coordinate.clientY-5,60,0,360);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.fillStyle = "red";
+        ctx.arc(coordinate.clientX-5,coordinate.clientY-5,40,0,360);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.fillStyle = "yellow";
+        ctx.arc(coordinate.clientX-5,coordinate.clientY-5,20,0,360);
+        ctx.fill();
+
+
+       
+            
+    })
+   </script>
+</html>
